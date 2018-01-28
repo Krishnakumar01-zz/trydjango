@@ -1,0 +1,19 @@
+{% extends 'leaderboard/index.html' %}
+{% block content %}
+<div class="col-lg-5"></div>
+<div class="col-lg-5">
+<div>
+	<br>
+	<br>
+	<h3><b><u>New/Edit</u></b></h3>
+</div>
+<br>
+<div>
+	<form method="POST" class="board-form">{% csrf_token %}
+		{{form.as_p}}
+		<br>
+			<button type="submit" style="margin-left:1.5cm" class="btn btn-i	nfo btn-lg"><span class="glyphicon glyphicon-save"></span>Save</button>
+	</form>
+</div>
+</div>
+{% endblock %}

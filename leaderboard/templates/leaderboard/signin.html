@@ -1,0 +1,16 @@
+{% extends 'leaderboard/index.html' %}
+{% block content %}
+<div class="col-lg-5"></div>
+<div class="col-lg-5">
+	<br>
+	<br>
+	<br>
+	<h3><b><u>Sign in</u></b></h3>
+<br>
+	<form method="POST" class="signinform">{% csrf_token %}
+		{{ form.as_p }}
+		<br>
+			<button type="submit" style="margin-left: 1.5cm" class="btn btn-info btn-lg">Signin</button>
+	</form>
+	</div>
+{% endblock %}

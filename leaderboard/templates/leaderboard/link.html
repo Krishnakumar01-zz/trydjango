@@ -1,0 +1,32 @@
+{% extends 'leaderboard/index.html' %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-lg-10"></div>
+		<div class="col-lg-1">
+		{% if user.is_authenticated %}
+			<a class="btn btn-default" href="{% url 'delete' pk=board.pk %}"><span class="glyphicon glyphicon-trash"></span></a>
+		{% endif %}</div>
+		<div class="col-lg-1">
+		{% if user.is_authenticated %}
+			<a class="btn btn-default" href="{% url 'edit' pk=board.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+		{% endif %}
+		</div>
+	</div>
+	<br>
+
+	<table class="table table-bordered table-hover">
+		<thead>
+		<tr>
+			<th>Name</th>
+			<th>Score</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr clas="info">
+				<td>{{board.name}}</td>
+					<td>{{board.marks}}</td>
+			</tr>
+		</tbody>
+	</table>
+{% endblock %}
